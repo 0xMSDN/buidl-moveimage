@@ -20,5 +20,5 @@ sudo curl -L "https://github.com/docker/compose/releases/download/v2.12.2/docker
 sudo chmod +x /usr/local/bin/docker-compose
 
 sudo mkdir /home/ubuntu/
-sudo wget wget https://codeload.github.com/move-language/move/zip/refs/heads/main -O /home/ubuntu/move
+sudo wget wget https://codeload.github.com/move-language/move/zip/refs/heads/main -O /home/ubuntu
 cd /home/ubuntu/move && git clone https://github.com/pontem-network/dove.git
