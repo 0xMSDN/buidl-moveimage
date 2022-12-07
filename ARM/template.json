@@ -24,7 +24,7 @@
         "vnetPubilcIP-name": "[concat(parameters('virtualMachine_name'),'-external')]",
         "vnetSubnet-name": "[concat(parameters('virtualMachine_name'),'-internal')]",
         "vnetSecurityGroup-name": "[concat(parameters('virtualMachine_name'),'-nsg')]",
-        "StorageAccount-name": "[concat(parameters('virtualMachine_name'),uniqueString(resourceGroup().id),'storage')]",
+        "StorageAccount-name": "[concat(parameters('virtualMachine_name'),toLower(uniqueString(resourceGroup().id)),'storage')]",
         "location": "[resourceGroup().location]"
     },
     "resources": [
@@ -52,7 +52,7 @@
             "properties": {
                 "publicIPAllocationMethod": "Static",
                 "dnsSettings": {
-                    "domainNameLabel": "[concat(toLower('ubuntuVM1'),uniqueString(resourceGroup().id))]"
+                    "domainNameLabel": "[concat(toLower(parameters('virtualMachine_name')),uniqueString(resourceGroup().id))]"
                 }
             }
         },
