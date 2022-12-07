@@ -24,7 +24,7 @@
         "vnetPubilcIP-name": "[concat(parameters('virtualMachine_name'),'-external')]",
         "vnetSubnet-name": "[concat(parameters('virtualMachine_name'),'-internal')]",
         "vnetSecurityGroup-name": "[concat(parameters('virtualMachine_name'),'-nsg')]",
-        "StorageAccount-name": "[concat(parameters('virtualMachine_name'),'storage')]",
+        "StorageAccount-name": "[concat(parameters('virtualMachine_name'),uniqueString(resourceGroup().id),'storage')]",
         "location": "[resourceGroup().location]"
     },
     "resources": [
