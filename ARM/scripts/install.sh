@@ -21,5 +21,5 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 sudo mkdir /home/ubuntu/
 sudo wget https://codeload.github.com/move-language/move/zip/refs/heads/main -O /home/ubuntu/move.zip
-sudo unzip move.zip -d /home/ubuntu/move
+sudo unzip /home/ubuntu/move.zip -d /home/ubuntu/move
 cd /home/ubuntu/move && git clone https://github.com/pontem-network/dove.git
