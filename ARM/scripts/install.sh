@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get install -y ca-certificates curl gnupg lsb-release git
+sudo apt-get install -y ca-certificates curl gnupg lsb-release git unzip
 
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg 
@@ -20,5 +20,6 @@ sudo curl -L "https://github.com/docker/compose/releases/download/v2.12.2/docker
 sudo chmod +x /usr/local/bin/docker-compose
 
 sudo mkdir /home/ubuntu/
-sudo wget wget https://codeload.github.com/move-language/move/zip/refs/heads/main -O /home/ubuntu
+sudo wget https://codeload.github.com/move-language/move/zip/refs/heads/main -O /home/ubuntu/move.zip
+sudo unzip move.zip -d /home/ubuntu/move
 cd /home/ubuntu/move && git clone https://github.com/pontem-network/dove.git
