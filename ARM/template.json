@@ -34,7 +34,7 @@
             "apiVersion": "2021-04-01",
             "location": "[variables('location')]",
             "tags": {
-                "displayName": "ubuntuVM1 Storage Account"
+                "displayName": "[concat(parameters('virtualMachine_name'),' Storage Account']"
             },
             "sku": {
                 "name": "Standard_LRS"
@@ -89,7 +89,7 @@
                 "[resourceId('Microsoft.Network/networkSecurityGroups', variables('vnetSecurityGroup-name'))]"
             ],
             "tags": {
-                "displayName": "ubuntuVM1-VirtualNetwork"
+                "displayName": "[concat(parameters('virtualMachine_name'),'-VirtualNetwork']"
             },
             "properties": {
                 "addressSpace": {
@@ -120,7 +120,7 @@
                 "[resourceId('Microsoft.Network/virtualNetworks', variables('vnet-name'))]"
             ],
             "tags": {
-                "displayName": "ubuntuVM1-NetworkInterface"
+                "displayName": "[concat(parameters('virtualMachine_name'),'-NetworkInterface']"
             },
             "properties": {
                 "ipConfigurations": [
@@ -148,7 +148,7 @@
                 "[resourceId('Microsoft.Network/networkInterfaces', variables('vnetInterfaces-name'))]"
             ],
             "tags": {
-                "displayName": "ubuntuVM1"
+                "displayName": "parameters('virtualMachine_name')"
             },
             "properties": {
                 "hardwareProfile": {
@@ -167,7 +167,7 @@
                         "version": "latest"
                     },
                     "osDisk": {
-                        "name": "ubuntuVM1-OSDisk",
+                        "name": "[concat(parameters('virtualMachine_name'),'-OSDisk']",
                         "caching": "ReadWrite",
                         "createOption": "FromImage"
                     }
